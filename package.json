@@ -5,6 +5,7 @@
   "main": "./api.js",
   "author": "",
   "dependencies": {
+    "bluebird": "^3.0.5",
     "chalk": "^1.0.0",
     "core-js": "^0.9.17",
     "glob": "^5.0.10",
@@ -18,7 +19,6 @@
     "ncp": "^2.0.0",
     "request": "^2.58.0",
     "rimraf": "^2.4.0",
-    "rsvp": "^3.0.18",
     "semver": "^5.0.1",
     "systemjs": "0.19.5",
     "systemjs-builder": "systemjs/builder#master",
