@@ -194,7 +194,8 @@ process.on('uncaughtException', function(err) {
 
     // flag values are strings
     optFlags.forEach(function(flag) {
-      options[flag] = (options[flag] || []).join(' ');
+      if (options[flag])
+        options[flag] = options[flag].join(' ');
     });
 
     return options;
@@ -253,8 +254,8 @@ process.on('uncaughtException', function(err) {
         depMap[name] = target || '';
       }
 
-      var override = options.override;
-      if (override) {
+      if ('override' in options) {
+        var override = options.override || '{}';
         if (!override.startsWith('{')) {
           try {
             options.override = fs.readFileSync(override);
